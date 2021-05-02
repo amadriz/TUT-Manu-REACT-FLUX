@@ -7,8 +7,10 @@ import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
+import { Navbar1 } from "./component/navbar";
 import { Footer } from "./component/footer";
+import Planets from "./views/planets";
+import Characters from "./views/characters";
 
 //create your first component
 const Layout = () => {
@@ -20,11 +22,12 @@ const Layout = () => {
 		<div className="d-flex flex-column">
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Navbar />
+					<Navbar1 />
 					<Switch>
-						<Route exact path="/">
-							<Home />
-						</Route>
+						<Route exact path="/" component={Home} />
+						<Route exact path="/planets" component={Planets} />
+						<Route exact path="/characters" component={Characters} />
+
 						<Route exact path="/demo">
 							<Demo />
 						</Route>
